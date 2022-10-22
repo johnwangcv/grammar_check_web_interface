@@ -53,6 +53,20 @@ def spanish_grammar_checker():
 
 # start the service
 
+sudo yum install python-pip
+
+pip3 install language_tool_python
+
+rm -r -f grammar_check_web_interface
+
+git clone https://github.com/johnwangcv/grammar_check_web_interface.git
+
+cd grammar_check_web_interface
+
+flask --app grammar_check_web_interface --debug run --host=0.0.0.0 --port=6912 
+
+
+
 flask --app grammar_checker_web_interface --debug run --port=6912 --host=0.0.0.0
 
 # user the service 
